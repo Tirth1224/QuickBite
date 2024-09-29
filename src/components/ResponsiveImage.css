@@ -1,0 +1,33 @@
+.responsive-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    max-width: 600px; /* Set a reasonable maximum width */
+    height: auto; /* Ensure the height adjusts automatically */
+    margin: 0 auto;
+    overflow: hidden; /* Prevent image overflow */
+  }
+  
+  .responsive-container img {
+    width: 100%; /* Image will take up 100% of the container's width */
+    max-width: 100%; /* Prevent the image from exceeding container's width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .responsive-container {
+      max-width: 90%; /* Adjust for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .responsive-container {
+      max-width: 80%;
+    }
+  }
+  
