@@ -70,7 +70,7 @@ const TestimonialSection: React.FC = () => {
   return (
     <div className="bg-white py-16">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-green-700 mb-8">
+        <h2 className="text-center text-3xl font-semibold mb-8 text-green-700">
           What Our Customers Say
         </h2>
         <div className="mx-auto w-full max-w-3xl">
@@ -114,7 +114,7 @@ const WhatSetsUsApart: React.FC = () => {
   return (
     <div className="py-12 bg-white mt-12 -mb-12">
       <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-green-700">
+        <h2 className="text-center text-3xl font-semibold mb-8 text-green-700">
           What Sets Us Apart
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -128,7 +128,7 @@ const WhatSetsUsApart: React.FC = () => {
               alt="Curated Selection"
               className="w-16 h-16 mx-auto mb-4"
             />
-            <h3 className="text-xl font-bold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-green-700">
               Curated Selection
             </h3>
             <p className="text-gray-600">
@@ -145,7 +145,7 @@ const WhatSetsUsApart: React.FC = () => {
               alt="Lightning-Fast Delivery"
               className="w-16 h-16 mx-auto mb-4"
             />
-            <h3 className="text-xl font-bold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-green-700">
               Lightning-Fast Delivery
             </h3>
             <p className="text-gray-600">Your food arrives hot and fresh.</p>
@@ -160,7 +160,7 @@ const WhatSetsUsApart: React.FC = () => {
               alt="User-Friendly Platform"
               className="w-16 h-16 mx-auto mb-4"
             />
-            <h3 className="text-xl font-bold mb-2 text-green-700">
+            <h3 className="text-xl font-semibold mb-2 text-green-700">
               User-Friendly Platform
             </h3>
             <p className="text-gray-600">
@@ -200,7 +200,9 @@ const AboutUSPage: React.FC = () => {
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <h2 className="text-4xl font-bold mb-6 text-green-700">About Us</h2>
+            <h2 className="text-left text-3xl font-semibold mb-8 text-green-700">
+              About Us
+            </h2>
             <p className="text-lg mb-6 leading-relaxed">
               Welcome to <span className="font-bold">QuickBite.com</span>, your
               one-stop destination for the best gourmet meals delivered right to
@@ -305,7 +307,7 @@ const AboutUSPage: React.FC = () => {
         </div> */}
         <div className="team-section mt-20 mb-16">
           <h3
-            className="text-3xl font-bold text-center text-green-700"
+            className="text-center text-3xl font-semibold mb-8 text-green-700"
             data-aos="fade-up"
             data-aos-delay="300"
             data-aos-duration="1000"

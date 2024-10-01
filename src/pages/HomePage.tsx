@@ -283,7 +283,7 @@ const HomePage = () => {
             data-aos="fade-right"
             data-aos-delay="400"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">
+            <h1 className="text-4xl md:text-5xl font-semibold text-green-800 mb-6">
               Explore your favourite city's food.
             </h1>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">
@@ -322,7 +322,7 @@ const HomePage = () => {
               className="w-15 h-15 mt-8 mb-8 mx-auto"
             />
             <div className="flex flex-col items-center px-4 py-2">
-              <h2 className="text-2xl font-bold text-green-800 mb-4 text-center">
+              <h2 className="text-2xl font-semibold text-green-800 mb-4 text-center">
                 Wide selection of restaurants
               </h2>
               <p className="text-gray-600 text-center text-sm md:text-base mb-36">
@@ -345,7 +345,7 @@ const HomePage = () => {
               className="w-15 h-15 mt-8 mb-8 mx-auto"
             />
             <div className="flex flex-col items-center px-4 py-2">
-              <h2 className="text-2xl mb-4 font-bold text-green-800 text-center">
+              <h2 className="text-2xl mb-4 font-semibold text-green-800 text-center">
                 Easy ordering process
               </h2>
               <p className="text-gray-600 text-center text-sm md:text-base mb-36">
@@ -368,7 +368,7 @@ const HomePage = () => {
               className="w-15 h-15 mt-8 mb-8 mx-auto"
             />
             <div className="flex flex-col items-center px-4 py-2">
-              <h2 className="text-2xl mb-4 font-bold text-green-800 text-center">
+              <h2 className="text-2xl mb-4 font-semibold text-green-800 text-center">
                 Fast delivery at your door step
               </h2>
               <p className="text-gray-600 text-center text-sm md:text-base mb-36">

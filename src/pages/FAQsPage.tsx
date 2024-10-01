@@ -69,7 +69,7 @@ const FaqsPage: React.FC = () => {
           className="w-full h-full object-cover rounded-2xl"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-green-700 text-center text-4xl font-bold">
+          <h1 className="text-green-700 text-center text-4xl font-semibold">
             Need Assistance? We’ve Got You Covered!
           </h1>
         </div>
@@ -353,7 +353,7 @@ const FaqsPage: React.FC = () => {
                 satisfying. Don't hesitate—drop us a message today!
               </p>
               <p className="mt-5 mb-2">
-                <strong>Email:</strong> quickbite24@gmail.com
+                <strong>Email:</strong> quickbite2402@gmail.com
               </p>
               <p>
                 <strong>Location:</strong> UVPCE, Ganpat University
@@ -372,7 +372,7 @@ const FaqsPage: React.FC = () => {
         </div>
       </section>
       <footer
-        className="bg-green-700 text-white py-6 rounded-2xl mb-0 -mt-12"
+        className="bg-green-700 text-white py-6 rounded-2xl mb-0 -mt-14"
         data-aos="fade-up"
         data-aos-delay="200"
       >
