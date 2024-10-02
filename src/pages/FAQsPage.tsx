@@ -358,8 +358,26 @@ const FaqsPage: React.FC = () => {
               <p>
                 <strong>Location:</strong> UVPCE, Ganpat University
               </p>
-              <p className="mt-2 mb-2">
+              {/* <p className="mt-2 mb-2">
                 <strong>LinkedIn:</strong>{" "}
+                <a
+                  href="https://www.linkedin.com/in/tirth-patel-b90b1622a/"
+                  className="text-green-700 no-underline"
+                >
+                  Tirth Patel
+                </a>
+              </p> */}
+              <p className="mt-2 mb-2">
+                <strong>Designed By:</strong>{" "}
+                <a
+                  href="https://www.linkedin.com/in/shreya-patel24/"
+                  className="text-green-700 no-underline"
+                >
+                  Shreya Patel
+                </a>
+              </p>
+              <p className="mt-2 mb-2">
+                <strong>Developed By:</strong>{" "}
                 <a
                   href="https://www.linkedin.com/in/tirth-patel-b90b1622a/"
                   className="text-green-700 no-underline"
