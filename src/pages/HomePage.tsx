@@ -283,7 +283,7 @@ const HomePage = () => {
             data-aos="fade-right"
             data-aos-delay="400"
           >
-            <h1 className="text-4xl md:text-5xl font-semibold text-green-800 mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-6">
               Explore your favourite city's food.
             </h1>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed">

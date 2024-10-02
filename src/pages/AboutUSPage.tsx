@@ -314,7 +314,7 @@ const AboutUSPage: React.FC = () => {
           >
             Meet Our Team
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {[
               {
                 name: "Tirth Patel",
@@ -353,6 +353,70 @@ const AboutUSPage: React.FC = () => {
                   />
                 </div>
                 <h4 className="text-xl font-semibold">{member.name}</h4>
+                <p className="text-gray-600">{member.role}</p>
+              </div>
+            ))}
+          </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {[
+              {
+                name: "Tirth Patel",
+                role: "Lead Developer & Innovation Strategist",
+                img: tirth,
+                linkedin: "https://www.linkedin.com/in/tirthppatel/",
+              },
+              {
+                name: "Hermil Patel",
+                role: "Content Writer & Story Architect",
+                img: hermil,
+                linkedin: "https://www.linkedin.com/in/hermil-patel-502856229/",
+              },
+              {
+                name: "Shreya Patel",
+                role: "UI/UX Designer & Visual Experience Curator",
+                img: shreya,
+                linkedin: "https://www.linkedin.com/in/shreya-patel24/",
+              },
+              {
+                name: "Soha Maknojia",
+                role: "Content Writer & Research Specialist",
+                img: soha,
+                linkedin:
+                  "https://www.linkedin.com/in/soha-maknojia-22272b2ab/",
+              },
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="team-member text-center transition-transform transform hover:scale-105 duration-700 ease-in-out"
+                data-aos="fade-up"
+                data-aos-delay={`${500 + index * 100}`}
+                data-aos-duration="1000"
+              >
+                <div className="w-full h-max md:h-120 sm:h-98 xs:h-60 overflow-hidden rounded-lg mb-4">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
+                  >
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                      style={{ objectFit: "cover", objectPosition: "center" }}
+                    />
+                  </a>
+                </div>
+                <h4 className="text-xl font-semibold">
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:no-underline"
+                  >
+                    {member.name}
+                  </a>
+                </h4>
                 <p className="text-gray-600">{member.role}</p>
               </div>
             ))}
