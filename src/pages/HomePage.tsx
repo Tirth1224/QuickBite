@@ -466,7 +466,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col gap-12">
-      <div
+      {/* <div
         className="max-h-screen bg-white-100 flex items-center justify-center p-1 lg:mt-5 md:mt-0"
         data-aos="fade-up"
       >
@@ -490,54 +490,58 @@ const HomePage = () => {
               placeHolder="Search by City or Town"
               onSubmit={handleSearchSubmit}
             />
-            {/* <div
-                className="flex flex-col md:flex-row items-center gap-4"
-                data-aos="fade-up"
-                data-aos-delay="800"
-              >
-                <input
-                  type="text"
-                  value={location}
-                  onChange={handleInputChange}
-                  placeholder="Enter your location"
-                  className="w-60 lg:w-60 md:w-35 sm:w-40 xs:w-72 p-4 border border-green-600 rounded-full focus:outline-none"
-                />
-                <div className="flex gap-4"> */}
-            {/* Reset button */}
-            {/* <button
-                    className="px-6 py-3 lg:w-30 md:w-20 md:py-4 flex justify-center items-center bg-gray-300 text-gray-800 font-semibold rounded-full"
-                    data-aos="fade-up"
-                    data-aos-delay="1000"
-                    onClick={handleReset}
-                  >
-                    Reset
-                  </button> */}
-            {/* <button
-                    className="px-6 py-3 lg:w-30 md:w-20 md:py-4 flex justify-center items-center bg-white text-green-600 font-semibold rounded-full border border-green-600 hover:bg-green-600 hover:text-white hover:border-green-700 transition-all duration-300"
-                    data-aos="fade-up"
-                    data-aos-delay="400"
-                    onClick={handleReset}
-                  >
-                    Reset
-                  </button> */}
+            
+          </div>
 
-            {/* Search button */}
-            {/* <button
-                    className="px-6 py-3 lg:w-30 md:w-20 md:py-4 flex justify-center items-center bg-green-600 text-white font-semibold rounded-full"
-                    data-aos="fade-up"
-                    data-aos-delay="500"
-                  >
-                    Search
-                  </button> */}
-            {/* <button
-                    className="px-6 py-3 lg:w-30 md:w-20 md:py-4 flex justify-center items-center bg-green-600 text-white font-semibold rounded-full border border-transparent hover:bg-white hover:text-green-600 hover:border-green-600 transition-all duration-500 ease-in-out"
-                    data-aos="fade-up"
-                    data-aos-delay="500"
-                  >
-                    Search
-                  </button>
-                </div>
-              </div> */}
+          <div
+            className="relative w-[300px] h-[300px] xs:w-[150px] xs:h-[150px] sm:w-[175px] sm:h-[175px] md:h-[260px] lg:h-[475px] md:w-[260px] lg:w-[475px] bg-white flex items-center justify-center"
+            data-aos="zoom-in"
+            data-aos-delay="1400"
+          >
+            <img
+              src={hero}
+              alt="Background"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </div>
+
+          <div
+            className="absolute inset-0"
+            data-aos="fade-up"
+            data-aos-delay="1600"
+          >
+            <img
+              src={image}
+              alt="Background"
+              className="w-[300px] min-h-[200px] object-cover opacity-30"
+            />
+          </div>
+        </div>
+      </div> */}
+      <div
+        className="max-h-screen xs:h-[00px] bg-white-100 flex items-center justify-center p-1 lg:mt-5 md:mt-0"
+        data-aos="fade-up"
+      >
+        <div
+          className="relative xs:w-full xs:h-[150vh] sm:h-[50vh] md:h-[70vh] lg:h-[85vh] max-w-screen-xl bg-white rounded-lg shadow-lg shadow-gray-350 overflow-hidden flex flex-col-reverse md:flex-row items-center p-6 md:p-10 -mt-56 md:-mt-56 lg:-mt-64"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
+          <div
+            className="z-10 flex-1 text-center md:text-left "
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >
+            <h1 className="text-3xl md:text-5xl font-bold text-green-700 mb-4 md:mb-6 xs:mt-12">
+              Order food online from your favourite local restaurants.
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 xs:mt-12 xs:mb-16">
+              Freshly made food delivered to your door.
+            </p>
+            <SearchBar
+              placeHolder="Search by City or Town"
+              onSubmit={handleSearchSubmit}
+            />
           </div>
 
           <div
