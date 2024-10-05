@@ -113,14 +113,14 @@ const SearchBar = ({ onSubmit, onReset, placeHolder }: Props) => {
             onClick={handleReset}
             type="button"
             variant="outline"
-            className="rounded-full text-sm px-4 py-2"
+            className="rounded-full text-sm px-4 py-2 border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
           >
             Clear
           </Button>
         )}
         <Button
           type="submit"
-          className="rounded-full bg-green-600 text-sm px-6 py-2"
+          className="rounded-full bg-green-600 text-white text-sm px-6 py-2 hover:bg-white hover:text-green-600 border border-green-600"
         >
           Search
         </Button>

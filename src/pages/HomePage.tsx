@@ -523,7 +523,7 @@ const HomePage = () => {
         data-aos="fade-up"
       >
         <div
-          className="relative xs:w-full xs:h-[150vh] sm:h-[50vh] md:h-[70vh] lg:h-[85vh] max-w-screen-xl bg-white rounded-lg shadow-lg shadow-gray-350 overflow-hidden flex flex-col-reverse md:flex-row items-center p-6 md:p-10 -mt-56 md:-mt-56 lg:-mt-64"
+          className="relative xs:w-full xs:h-[150vh] sm:h-[50vh] md:h-[70vh] lg:h-[82vh] max-w-screen-xl bg-white rounded-lg shadow-lg shadow-gray-350 overflow-hidden flex flex-col-reverse md:flex-row items-center p-6 md:p-10 -mt-56 md:-mt-56 lg:-mt-64"
           data-aos="fade-right"
           data-aos-delay="400"
         >
