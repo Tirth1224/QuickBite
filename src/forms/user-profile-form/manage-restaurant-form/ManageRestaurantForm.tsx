@@ -158,7 +158,7 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
         )}
       </form>
       <footer
-        className="bg-green-700 text-white py-6 mt-10 rounded-2xl"
+        className="bg-green-700 text-white py-6 mt-10 rounded-2xl mb-4"
         // data-aos="fade-up"
         // data-aos-delay="200"
       >

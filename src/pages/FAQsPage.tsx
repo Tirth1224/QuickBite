@@ -390,7 +390,7 @@ const FaqsPage: React.FC = () => {
         </div>
       </section>
       <footer
-        className="bg-green-700 text-white py-6 rounded-2xl mb-0 -mt-14"
+        className="bg-green-700 text-white py-6 rounded-2xl mb-4 -mt-14"
         data-aos="fade-up"
         data-aos-delay="200"
       >

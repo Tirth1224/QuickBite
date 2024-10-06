@@ -70,41 +70,80 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">
-      <div id="cuisines-list">
-        <CuisineFilter
-          selectedCuisines={searchState.selectedCuisines}
-          onChange={setSelectedCuisines}
-          isExpanded={isExpanded}
-          onExpandedClick={() =>
-            setIsExpanded((prevIsExpanded) => !prevIsExpanded)
-          }
-        />
-      </div>
-      <div id="main-content" className="flex flex-col gap-5">
-        <SearchBarSP
-          searchQuery={searchState.searchQuery}
-          onSubmit={setSearchQuery}
-          placeHolder="Search by Cuisine or Restaurant Name"
-          onReset={resetSearch}
-        />
-        <div className="flex justify-between flex-col gap-3 lg:flex-row">
-          <SearchResultInfo total={results.pagination.total} city={city} />
-          <SortOptionDropdown
-            sortOption={searchState.sortOption}
-            onChange={(value) => setSortOption(value)}
+    <div className="space-between">
+      <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">
+        <div id="cuisines-list">
+          <CuisineFilter
+            selectedCuisines={searchState.selectedCuisines}
+            onChange={setSelectedCuisines}
+            isExpanded={isExpanded}
+            onExpandedClick={() =>
+              setIsExpanded((prevIsExpanded) => !prevIsExpanded)
+            }
           />
         </div>
+        <div id="main-content" className="flex flex-col gap-5">
+          <SearchBarSP
+            searchQuery={searchState.searchQuery}
+            onSubmit={setSearchQuery}
+            placeHolder="Search by Cuisine or Restaurant Name"
+            onReset={resetSearch}
+          />
+          <div className="flex justify-between flex-col gap-3 lg:flex-row">
+            <SearchResultInfo total={results.pagination.total} city={city} />
+            <SortOptionDropdown
+              sortOption={searchState.sortOption}
+              onChange={(value) => setSortOption(value)}
+            />
+          </div>
 
-        {results.data.map((restaurant) => (
-          <SearchResultCard restaurant={restaurant} />
-        ))}
-        <PaginationSelector
-          page={results.pagination.page}
-          pages={results.pagination.pages}
-          onPageChange={setPage}
-        />
+          {results.data.map((restaurant) => (
+            <SearchResultCard restaurant={restaurant} />
+          ))}
+          <PaginationSelector
+            page={results.pagination.page}
+            pages={results.pagination.pages}
+            onPageChange={setPage}
+          />
+        </div>
       </div>
+      <footer
+        className="bg-green-700 text-white py-6 rounded-2xl mb-4 mt-16"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+          <div
+            className="text-center md:text-left mb-4 md:mb-0 cursor-pointer"
+            onClick={() => (window.location.href = "/")}
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <h1 className="text-2xl font-bold mb-2 transition-transform transform duration-300 hover:text-white-100 hover:scale-105">
+              QuickBite.com
+            </h1>
+            <p>&copy; 2024 QuickBite. All rights reserved.</p>
+          </div>
+          <div className="flex flex-col md:flex-row mb-4 md:mb-0">
+            <a
+              href="/about-us"
+              className="px-4 py-2 transition-transform transition-colors transform duration-300 ease-in hover:text-white-100 hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              About US
+            </a>
+            <a
+              href="/faqs"
+              className="px-4 py-2 transition-transform transition-colors transform duration-300 ease-in hover:text-white-100 hover:scale-105"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
+              FAQs
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

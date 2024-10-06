@@ -424,7 +424,7 @@ const AboutUSPage: React.FC = () => {
         </div>
 
         <footer
-          className="bg-green-700 text-white py-6 rounded-2xl -mb-12"
+          className="bg-green-700 text-white py-6 rounded-2xl -mb-8"
           data-aos="fade-up"
           data-aos-delay="200"
         >

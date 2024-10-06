@@ -682,7 +682,7 @@ const HomePage = () => {
       </div>
       {/* Footer Section */}
       <footer
-        className="bg-green-700 text-white py-6 rounded-2xl"
+        className="bg-green-700 text-white py-6 rounded-2xl mb-4 "
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -701,7 +701,7 @@ const HomePage = () => {
           <div className="flex flex-col md:flex-row mb-4 md:mb-0">
             <a
               href="/about-us"
-              className="px-4 py-2 transition-transform transform duration-300 ease-in-out hover:text-white-100 hover:scale-105"
+              className="px-4 py-2 transition-transform transform duration-300 ease-in hover:text-white-100 hover:scale-105"
               data-aos="fade-up"
               data-aos-delay="600"
             >
@@ -709,7 +709,7 @@ const HomePage = () => {
             </a>
             <a
               href="/faqs"
-              className="px-4 py-2 transition-transform transform duration-300 ease-in-out hover:text-white-100 hover:scale-105"
+              className="px-4 py-2 transition-transform transform duration-300 ease-in hover:text-white-100 hover:scale-105"
               data-aos="fade-up"
               data-aos-delay="800"
             >
