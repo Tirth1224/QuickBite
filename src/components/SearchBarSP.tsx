@@ -22,7 +22,12 @@ type Props = {
   searchQuery: string;
 };
 
-const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
+const SearchBarSP = ({
+  onSubmit,
+  onReset,
+  placeHolder,
+  searchQuery,
+}: Props) => {
   const form = useForm<SearchForm>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -45,58 +50,16 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
   };
 
   return (
-    // <Form {...form}>
-    //   <form
-    //     onSubmit={form.handleSubmit(onSubmit)}
-    //     className={`flex items-left flex-1 gap-3 justify-between flex-row border-2 rounded-full p-3 mx-5 ${
-    //       form.formState.errors.searchQuery && "border-green-600"
-    //     }`}
-    //   >
-    //     <Search
-    //       strokeWidth={2.5}
-    //       size={30}
-    //       className="ml-1 text-green-600 hidden md:block"
-    //     />
-    //     <FormField
-    //       control={form.control}
-    //       name="searchQuery"
-    //       render={({ field }) => (
-    //         <FormItem className="flex-1">
-    //           <FormControl>
-    //             <Input
-    //               {...field}
-    //               className="border-none shadow-none text-xl focus-visible:ring-0"
-    //               placeholder={placeHolder}
-    //             />
-    //           </FormControl>
-    //         </FormItem>
-    //       )}
-    //     />
-    //     {form.formState.isDirty && (
-    //       <Button
-    //         onClick={handleReset}
-    //         type="button"
-    //         variant="outline"
-    //         className="rounded-full"
-    //       >
-    //         Clear
-    //       </Button>
-    //     )}
-    //     <Button type="submit" className="rounded-full bg-green-600">
-    //       Search
-    //     </Button>
-    //   </form>
-    // </Form>
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`flex items-center flex-1 gap-3 justify-between flex-row border-2 rounded-full p-2 mx-auto w-full max-w-3xl ${
+        className={`flex items-left gap-3 justify-between flex-row border-2 rounded-full p-3  ${
           form.formState.errors.searchQuery && "border-green-600"
         }`}
       >
         <Search
           strokeWidth={2.5}
-          size={25}
+          size={35}
           className="ml-2 text-green-600 hidden md:block"
         />
         <FormField
@@ -129,8 +92,50 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
           Search
         </Button>
       </form>
+
+      {/* <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={`flex items-center gap-3 justify-start border-2 rounded-full p-3 w-full max-w-[100%] sm:max-w-[100%] md:max-w-[100%] lg:max-w-[100%] xl:max-w-[100%] 2xl:max-w-[100%] mx-auto ${
+          form.formState.errors.searchQuery && "border-green-600"
+        }`}
+      >
+        <Search
+          strokeWidth={2.5}
+          size={35}
+          className="ml-2 text-green-600 hidden md:block"
+        />
+        <FormField
+          control={form.control}
+          name="searchQuery"
+          render={({ field }) => (
+            <FormItem className="flex-1">
+              <FormControl>
+                <Input
+                  {...field}
+                  className="border-none shadow-none text-lg focus-visible:ring-0 w-full"
+                  placeholder={placeHolder}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <Button
+          onClick={handleReset}
+          type="button"
+          variant="outline"
+          className="rounded-full text-sm px-4 py-2 border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+        >
+          Reset
+        </Button>
+        <Button
+          type="submit"
+          className="rounded-full bg-green-600 text-white text-sm px-6 py-2 hover:bg-white hover:text-green-600 border border-green-600"
+        >
+          Search
+        </Button>
+      </form> */}
     </Form>
   );
 };
 
-export default SearchBar;
+export default SearchBarSP;
