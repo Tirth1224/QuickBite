@@ -25,15 +25,23 @@ const formSchema = z.object({
   country: z.string().min(1, "Country is required"),
 });
 
-type UserFormData = z.infer<typeof formSchema>;
+export type UserFormData = z.infer<typeof formSchema>;
 
 type Props = {
   currentUser: User;
   onSave: (userProfileData: UserFormData) => void;
   isLoading: boolean;
+  title?: string;
+  buttonText?: string;
 };
 
-const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
+const UserProfileForm = ({
+  onSave,
+  isLoading,
+  currentUser,
+  title = "User Profile",
+  buttonText = "Submit",
+}: Props) => {
   const form = useForm<UserFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: currentUser,
@@ -62,7 +70,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
             className="space-y-4 bg-gray-50 rounded-lg md:p-10"
           >
             <div>
-              <h2 className="text-2xl font-bold">User Profile Form</h2>
+              <h2 className="text-2xl font-bold">{title}</h2>
               <FormDescription>
                 View and Change your profile information here
               </FormDescription>
@@ -142,49 +150,12 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
                 type="submit"
                 className="flex items-center px-3 font-bold bg-green-600 text-white border border-green-600 hover:bg-white hover:text-green-600"
               >
-                Submit
+                {buttonText}
               </Button>
             )}
           </form>
         </Form>
       </div>
-      <footer
-        className="bg-green-700 text-white py-6 mt-10 rounded-2xl"
-        // data-aos="fade-up"
-        // data-aos-delay="600"
-      >
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
-          <div
-            className="text-center md:text-left mb-4 md:mb-0 cursor-pointer"
-            onClick={() => (window.location.href = "/")}
-            // data-aos="fade-up"
-            // data-aos-delay="600"
-          >
-            <h1 className="text-2xl font-bold mb-2 transition-transform transform duration-300 hover:text-white-100 hover:scale-105">
-              QuickBite.com
-            </h1>
-            <p>&copy; 2024 QuickBite. All rights reserved.</p>
-          </div>
-          <div className="flex flex-col md:flex-row mb-4 md:mb-0">
-            <a
-              href="/about-us"
-              className="px-4 py-2 transition-transform transition-colors transform duration-300 ease-in-out hover:text-white-100 hover:scale-105"
-              // data-aos="fade-up"
-              // data-aos-delay="600"
-            >
-              About US
-            </a>
-            <a
-              href="/faqs"
-              className="px-4 py-2 transition-transform transition-colors transform duration-300 ease-in-out hover:text-white-100 hover:scale-105"
-              // data-aos="fade-up"
-              // data-aos-delay="700"
-            >
-              FAQs
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
