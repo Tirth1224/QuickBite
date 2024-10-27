@@ -357,7 +357,7 @@ const AboutUSPage: React.FC = () => {
               </div>
             ))}
           </div> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 -mb-20">
             {[
               {
                 name: "Tirth Patel",
@@ -423,7 +423,7 @@ const AboutUSPage: React.FC = () => {
           </div>
         </div>
 
-        <footer
+        {/* <footer
           className="bg-green-700 text-white py-6 rounded-2xl -mb-8"
           data-aos="fade-up"
           data-aos-delay="200"
@@ -459,7 +459,7 @@ const AboutUSPage: React.FC = () => {
               </a>
             </div>
           </div>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );

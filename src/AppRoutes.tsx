@@ -38,6 +38,7 @@ const AppRoutes = () => {
         element={
           <Layout showHero={false}>
             <DetailPage />
+            <Footer />
           </Layout>
         }
       />
@@ -67,6 +68,7 @@ const AppRoutes = () => {
         element={
           <Layout>
             <AboutUSPage />
+            <Footer />
           </Layout>
         }
       />
