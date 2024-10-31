@@ -269,7 +269,7 @@ export const useCreateCheckoutSession = () => {
         prefill: {
           name: data.deliveryDetails?.name || "Guest",
           email: data.deliveryDetails?.email || "",
-          contact: "9876543210", // Test contact number
+          contact: "8866248170", // Test contact number
         },
         theme: {
           color: "#3399cc",
