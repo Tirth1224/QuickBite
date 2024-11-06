@@ -190,12 +190,40 @@
 //   };
 // };
 
+// new code
+
 import { useAuth0 } from "@auth0/auth0-react";
-import { useMutation } from "react-query";
+import { useMutation, useQuery } from "react-query";
 import { toast } from "sonner";
 import { useRazorpay } from "../Hooks/UseRazorpay"; // Import the hook here
+import { Order } from "@/types";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+export const useGetMyOrders = () => {
+  const { getAccessTokenSilently } = useAuth0();
+  const getMyOrderRequest = async (): Promise<Order[]> => {
+    const accessToken = await getAccessTokenSilently();
+    const response = await fetch(`${API_BASE_URL}/api/order`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Failed to get orders");
+    }
+    return response.json();
+  };
+  const { data: orders, isLoading } = useQuery(
+    "fetchMyOrders",
+    getMyOrderRequest,
+    {
+      refetchInterval: 5000,
+    }
+  );
+
+  return { orders, isLoading };
+};
 
 type CheckoutSessionRequest = {
   cartItems: {
@@ -257,15 +285,46 @@ export const useCreateCheckoutSession = () => {
       const restaurantName = data.restaurantName || "Your Restaurant Name"; // Use the restaurant name from the response
 
       const options = {
+        // key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Use your Razorpay Key here
+        // amount: data.amount,
+        // currency: "INR",
+        // name: restaurantName, // Use the restaurant name here
+        // description: "Order Payment",
+        // order_id: data.id,
+
         key: import.meta.env.VITE_RAZORPAY_KEY_ID, // Use your Razorpay Key here
-        amount: data.amount,
+        amount: data.totalAmount * 100, // Use the total amount sent from the server
         currency: "INR",
         name: restaurantName, // Use the restaurant name here
         description: "Order Payment",
         order_id: data.id,
-        handler: (_response: any) => {
-          toast.success("Payment successful!");
+
+        // handler: (_response: any) => {
+        //   toast.success("Payment successful!");
+        // },
+        handler: async (_response: any) => {
+          try {
+            const accessToken = await getAccessTokenSilently();
+
+            // Use the MongoDB orderId returned by the backend
+            await fetch(`${API_BASE_URL}/api/order/update-status`, {
+              method: "PATCH",
+              headers: {
+                Authorization: `Bearer ${accessToken}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ orderId: data.orderId, status: "paid" }), // Using MongoDB ObjectId here
+            });
+
+            toast.success("Payment successful and order status updated!");
+          } catch (error) {
+            console.error("Error updating order status:", error);
+            toast.error(
+              "Payment successful, but failed to update order status."
+            );
+          }
         },
+
         prefill: {
           name: data.deliveryDetails?.name || "Guest",
           email: data.deliveryDetails?.email || "",
