@@ -128,7 +128,7 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
       <img
         src={image}
         alt="Leaf"
-        className="absolute top-16 -left-4 w-48 h-48 opacity-70 z-0"
+        className="absolute top-40 -left-4 w-48 h-48 opacity-70 z-0"
       />
       <img
         src={image}
